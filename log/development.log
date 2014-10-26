@@ -1,0 +1,235 @@
+  [1m[36m (241.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (28.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20141025081639)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141025081639"]]
+  [1m[35m (39.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/products" for 127.0.0.1 at 2014-10-25 10:20:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 912ms (Views: 901.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-25 10:20:54 +0200
+
+
+Started GET "/products/new" for 127.0.0.1 at 2014-10-25 10:41:27 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (18.7ms)
+  Rendered products/new.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 94ms (Views: 83.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-25 10:41:28 +0200
+
+
+Started POST "/products" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8pDLmljfotb2svD2rAyEi/37rAZaaPMMzOve30f8Ih8=", "product"=>{"title"=>"CoffeeScript", "description"=>"{<p>\r\n        CoffeeScript is JavaScript done right. It provides all of JavaScript's\r\n\tfunctionality wrapped in a cleaner, more succinct syntax. In the first\r\n\tbook on this exciting new language, CoffeeScript guru Trevor Burnham\r\n\tshows you how to hold onto all the power and flexibility of JavaScript\r\n\twhile writing clearer, cleaner, and safer code.\r\n      </p>}", "image_url"=>"cs.jpg", "price"=>"36.00"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-25 08:42:49.326897"], ["description", "{<p>\r\n        CoffeeScript is JavaScript done right. It provides all of JavaScript's\r\n\tfunctionality wrapped in a cleaner, more succinct syntax. In the first\r\n\tbook on this exciting new language, CoffeeScript guru Trevor Burnham\r\n\tshows you how to hold onto all the power and flexibility of JavaScript\r\n\twhile writing clearer, cleaner, and safer code.\r\n      </p>}"], ["image_url", "cs.jpg"], ["price", 36.0], ["title", "CoffeeScript"], ["updated_at", "2014-10-25 08:42:49.326897"]]
+  [1m[35m (134.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 143ms (ActiveRecord: 135.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products"  WHERE "products"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered products/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 45ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-25 10:42:49 +0200
+
+
+Started GET "/products" for 127.0.0.1 at 2014-10-25 10:42:57 +0200
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-25 10:43:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (103.2ms)[0m  DELETE FROM "products"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-25 08:45:43.797055"], ["description", "<p>\n        CoffeeScript is JavaScript done right. It provides all of JavaScript's\n\tfunctionality wrapped in a cleaner, more succinct syntax. In the first\n\tbook on this exciting new language, CoffeeScript guru Trevor Burnham\n\tshows you how to hold onto all the power and flexibility of JavaScript\n\twhile writing clearer, cleaner, and safer code.\n      </p>"], ["image_url", "cs.jpg"], ["price", 36.0], ["title", "CoffeeScript"], ["updated_at", "2014-10-25 08:45:43.797055"]]
+  [1m[36m (23.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-25 08:45:43.824582"], ["description", "<p>\n        Ruby is the fastest growing and most exciting dynamic language\n        out there. If you need to get working programs delivered fast,\n        you should add Ruby to your toolbox.\n      </p>"], ["image_url", "ruby.jpg"], ["price", 49.95], ["title", "Programming Ruby 1.9 & 2.0"], ["updated_at", "2014-10-25 08:45:43.824582"]]
+  [1m[35m (98.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-25 08:45:43.925091"], ["description", "<p>\n        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing\n        Rails applications, covering Test-Driven Development from both a\n        theoretical perspective (why to test) and from a practical perspective\n        (how to test effectively). It covers the core Rails testing tools and\n        procedures for Rails 2 and Rails 3, and introduces popular add-ons,\n        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.\n      </p>"], ["image_url", "rtp.jpg"], ["price", 34.95], ["title", "Rails Test Prescriptions"], ["updated_at", "2014-10-25 08:45:43.925091"]]
+  [1m[36m (28.3ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/products" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 121ms (Views: 111.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/cs.jpg" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/rtp.jpg" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+
+
+Started GET "/assets/ruby.jpg" for 127.0.0.1 at 2014-10-25 11:09:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProducts (20141025081639)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "products"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20141025081639'[0m
+  [1m[35m (50.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20141025081639)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141025081639"]]
+  [1m[36m (58.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (78.7ms)[0m  DELETE FROM "products"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.1ms)[0m  SELECT  1 AS one FROM "products"  WHERE "products"."title" = 'CoffeeScript' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-25 09:49:57.402836"], ["description", "<p>\n        CoffeeScript is JavaScript done right. It provides all of JavaScript's\n\tfunctionality wrapped in a cleaner, more succinct syntax. In the first\n\tbook on this exciting new language, CoffeeScript guru Trevor Burnham\n\tshows you how to hold onto all the power and flexibility of JavaScript\n\twhile writing clearer, cleaner, and safer code.\n      </p>"], ["image_url", "cs.jpg"], ["price", 36.0], ["title", "CoffeeScript"], ["updated_at", "2014-10-25 09:49:57.402836"]]
+  [1m[35m (4.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.1ms)[0m  SELECT  1 AS one FROM "products"  WHERE "products"."title" = 'Programming Ruby 1.9 & 2.0' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-25 09:49:57.412043"], ["description", "<p>\n        Ruby is the fastest growing and most exciting dynamic language\n        out there. If you need to get working programs delivered fast,\n        you should add Ruby to your toolbox.\n      </p>"], ["image_url", "ruby.jpg"], ["price", 49.95], ["title", "Programming Ruby 1.9 & 2.0"], ["updated_at", "2014-10-25 09:49:57.412043"]]
+  [1m[35m (21.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.1ms)[0m  SELECT  1 AS one FROM "products"  WHERE "products"."title" = 'Rails Test Prescriptions' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-25 09:49:57.437407"], ["description", "<p>\n        <em>Rails Test Prescriptions</em> is a comprehensive guide to testing\n        Rails applications, covering Test-Driven Development from both a\n        theoretical perspective (why to test) and from a practical perspective\n        (how to test effectively). It covers the core Rails testing tools and\n        procedures for Rails 2 and Rails 3, and introduces popular add-ons,\n        including Cucumber, Shoulda, Machinist, Mocha, and Rcov.\n      </p>"], ["image_url", "rtp.jpg"], ["price", 34.95], ["title", "Rails Test Prescriptions"], ["updated_at", "2014-10-25 09:49:57.437407"]]
+  [1m[35m (5.0ms)[0m  commit transaction
